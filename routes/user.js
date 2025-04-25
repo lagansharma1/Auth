@@ -8,9 +8,9 @@ const {auth , isStudent ,isAdmin} = require('../middlewares/auth')
 router.post('/signup', signup); // ✅ Correct
 
 
-router.get('/test', auth , (res , req ) => {
-    res.status(200).json({message : "Welcome to the test route"})
-})
+router.get('/test', auth , (req , res ) => {
+    res.status(200).json({message : "Welcome to the test route"});
+});
 
 //protected routes
 router.get('/student', auth , isStudent , (res , req ) => {
